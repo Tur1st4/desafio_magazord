@@ -19,7 +19,11 @@ class _MainWidgetState extends State<MainWidget> {
       builder: (context, _) {
         return MaterialApp(
           home: const HomePage(),
-          theme: _themeNotifier.isDark ? ThemeData.dark() : ThemeData.light(),
+          theme: ThemeData.light().copyWith(
+            colorScheme: ColorScheme.fromSeed(
+              seedColor: _themeNotifier.color,
+            ),
+          ),
         );
       },
     );

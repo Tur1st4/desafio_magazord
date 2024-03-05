@@ -30,10 +30,17 @@ class _HomePageState extends State<HomePage> {
               onPressed: pushShopPage,
               child: const Text("Shop"),
             ),
-            ExpandedElevatedIconButton(
-              onPressed: _changeTheme,
-              icon: const Icon(Icons.brightness_medium),
-              label: const Text("Alterar tema"),
+            ExpandedElevatedButton(
+              onPressed: () => _changeTheme(Colors.blue),
+              child: const Text("Alterar tema para AZUL"),
+            ),
+            ExpandedElevatedButton(
+              onPressed: () => _changeTheme(Colors.red),
+              child: const Text("Alterar tema para VERMELHO"),
+            ),
+            ExpandedElevatedButton(
+              onPressed: () => _changeTheme(Colors.yellow),
+              child: const Text("Alterar tema para AMARELO"),
             ),
           ],
         ),
@@ -54,7 +61,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  void _changeTheme() {
-    _themeNotifier.isDark = !_themeNotifier.isDark;
+  void _changeTheme(Color color) {
+    _themeNotifier.color = color;
   }
 }

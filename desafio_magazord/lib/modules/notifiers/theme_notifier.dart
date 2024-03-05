@@ -9,12 +9,12 @@ class ThemeNotifier extends ChangeNotifier {
 
   ThemeNotifier._internal();
 
-  bool _isDark = false;
+  Color _color = Colors.yellow;
 
-  bool get isDark => _isDark;
+  Color get color => _color;
 
-  set isDark(bool value) {
-    _isDark = value;
+  set color(Color value) {
+    _color = value;
 
     notifyListeners();
   }
